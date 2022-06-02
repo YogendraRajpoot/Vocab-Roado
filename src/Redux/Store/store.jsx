@@ -1,6 +1,11 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
 import { reducer } from "../Reducer/reducer";
-export const store = createStore(reducer, {
-  addword: false,
-  searchword:""
-});
+// import cors from "cors
+let cors = require("cors");
+
+export const store = createStore(
+  reducer,
+  // applyMiddleware(cors),
+  applyMiddleware(thunk)
+);

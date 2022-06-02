@@ -1,19 +1,22 @@
 import { ADD_Button, SEARCH_WORD } from "../Action/action";
-
-export const reducer = (store, action) => {
+const initState = {
+  addword: false,
+  searchword: "",
+};
+export const reducer = (state = initState, action) => {
   switch (action.type) {
     case ADD_Button:
       return {
-        ...store,
+        ...state,
         addword: action.payload,
       };
     case SEARCH_WORD:
       return {
-        ...store,
+        ...state,
         searchword: action.payload,
       };
 
     default:
-      return store;
+      return state;
   }
 };
