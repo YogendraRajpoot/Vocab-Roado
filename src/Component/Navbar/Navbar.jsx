@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
+import { useDispatch } from "react-redux";
+import { addButton } from "../../Redux/Action/action";
+import { AddWord } from "../Home/AddWord";
 
 const Nav = styled.nav`
   position: sticky;
@@ -62,8 +65,6 @@ const Input = styled.input`
   transition: width 1s;
   border: 0px solid white;
   background: transparent;
-  float: right;
-  margin-right: 5%;
   cursor: pointer;
   ::placeholder {
     color: black;
@@ -90,6 +91,12 @@ const Button = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+
   &:hover {
     // width: 15vh;
     // outline: none;
@@ -98,21 +105,34 @@ const Button = styled.button`
 `;
 
 export const Navbar = () => {
+  const dispatch = useDispatch();
+  const [button, setButton] = useState(true);
+  function onClick() {
+    setButton(true);
+    dispatch(addButton(button));
+    console.log(button);
+  }
+
   return (
-    <Nav>
-      <Left>
-        <h1>VOCAB</h1>
-      </Left>
-      <Right>
-        <SearchBox>
-          <AddIcon />
-          <Button>Add Word</Button>
-        </SearchBox>
-        <SearchBox>
-          <SearchIcon />
-          <Input placeholder="Search..."></Input>
-        </SearchBox>
-      </Right>
-    </Nav>
+    <>
+      <Nav>
+        <Left>
+          <h1>VOCAB</h1>
+        </Left>
+        <Right>
+          <SearchBox>
+            <Button onClick={onClick}>
+              <AddIcon />
+              Add Word
+            </Button>
+          </SearchBox>
+          <SearchBox>
+            <SearchIcon />
+            <Input placeholder="Search..." />
+          </SearchBox>
+        </Right>
+      </Nav>
+      {/* <div>{button && <AddWord />}</div>   */}
+    </>
   );
 };
