@@ -6,7 +6,9 @@ import data from "../../db.json";
 
 const Container = styled.div`
   // margin-top: 2%;
-  background: #efefef;
+  // background: #efefef;
+  // background: lightcoral;
+  // background: rgba(200, 200, 200);
   min-height: 91vh;
   width: 80%;
   margin-left: auto;
@@ -25,22 +27,29 @@ const Header = styled.div`
 `;
 const PopUpModal = styled.div`
   // border: 2px solid black;
-  // position: relative;
-  // margin-top: 11vh;
-  // width: 50%;
-  // height: 36vh;
-  // margin-left: auto;
-  // margin-right: auto;
+  // position: fixed;
+  // height: 100%;
+  // width: 100%;
+  // background: grey;
+  // top: 0;
+  // left: 0;
+  // z-index: 50;
 `;
 const Div = styled.div`
   border: 2px solid black;
   margin-top: 2%;
   position: relative;
   height: 80vh;
-  // overflowx: "scroll";
-  // overflowy: "hidden";
-  overflow: hidden;
-  scroll-behavior: smooth;
+  overflow: scroll;
+  background: #efefef;
+`;
+const Card = styled.div`
+  border: 2px solid black;
+  margin-top: 1%;
+  width: 50%;
+  height: 10vh;
+  margin-left: auto;
+  margin-right: auto;
 `;
 export const Home = () => {
   const searchItem = useSelector((state) => state.searchword);
@@ -53,6 +62,7 @@ export const Home = () => {
       <Header>
         <h1>List Of Word</h1>
       </Header>
+      <PopUpModal>{addword && <AddWord />}</PopUpModal>
       <Div>
         {name
           .filter((d) => {
@@ -65,11 +75,9 @@ export const Home = () => {
             }
           })
           .map((d) => {
-            return <div key={d.id}>{d.first_name}</div>;
+            return <Card key={d.id}>{d.first_name}</Card>;
           })}
       </Div>
-      {/* <AddWord /> */}
-      <PopUpModal>{addword && <AddWord />}</PopUpModal>
     </Container>
   );
 };

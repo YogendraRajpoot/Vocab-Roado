@@ -20,6 +20,7 @@ const Nav = styled.nav`
   height: 8vh;
   color: white;
   background: #e74c3c;
+  z-index: 100;
 `;
 const Left = styled.div`
   // border: 2px solid black;
