@@ -15,7 +15,7 @@ const PopUpModal = styled.div`
 
 export const AddWord = () => {
   const dispatch = useDispatch();
-  const addword = useSelector((state) => state.addword);
+//   const addword = useSelector((state) => state.addword);
   function onClick() {
     dispatch(addButton(false));
   }

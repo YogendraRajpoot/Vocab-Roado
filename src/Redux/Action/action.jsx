@@ -1,5 +1,6 @@
 // action type
 export const ADD_Button = "ADD_Button";
+export const SEARCH_WORD = "SEARCH_WORD";
 
 
 
@@ -9,6 +10,13 @@ export const ADD_Button = "ADD_Button";
 export const addButton = (payload) => {
   return {
     type: ADD_Button,
+    payload,
+  };
+};
+
+export const searchWord = (payload) => {
+  return {
+    type: SEARCH_WORD,
     payload,
   };
 };

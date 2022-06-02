@@ -3,9 +3,9 @@ import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 import { useDispatch } from "react-redux";
-import { addButton } from "../../Redux/Action/action";
+import { addButton, searchWord } from "../../Redux/Action/action";
 import { AddWord } from "../Home/AddWord";
-
+// import data from "../../db.json";
 const Nav = styled.nav`
   position: sticky;
   top: 0px;
@@ -107,10 +107,16 @@ const Button = styled.button`
 export const Navbar = () => {
   const dispatch = useDispatch();
   const [button, setButton] = useState(true);
+  const [search, setSearch] = useState("");
   function onClick() {
     setButton(true);
     dispatch(addButton(button));
     console.log(button);
+  }
+  function onChange(event) {
+    setSearch(event.target.value);
+    dispatch(searchWord(search))
+    console.log("119",search);
   }
 
   return (
@@ -128,7 +134,7 @@ export const Navbar = () => {
           </SearchBox>
           <SearchBox>
             <SearchIcon />
-            <Input placeholder="Search..." />
+            <Input placeholder="Search..." onChange={onChange} />
           </SearchBox>
         </Right>
       </Nav>
