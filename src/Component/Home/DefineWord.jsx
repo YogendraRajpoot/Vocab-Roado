@@ -1,3 +1,4 @@
+import { color } from "@mui/system";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -113,8 +114,17 @@ export const DefineWord = () => {
                 {d.results[0].lexicalEntries.map((i) => {
                   return (
                     <div key={i.id} style={{ padding: "1% 0%" }}>
-                      <div style={{ padding: "1% 0%" }}>
-                        ({i.lexicalCategory.text}) {i.entries[0].etymologies}
+                      <div
+                        style={{
+                          padding: "1% 0%",
+                          fontStyle: "italic",
+                          color: "gray",
+                        }}
+                      >
+                        {i.lexicalCategory.text.toLowerCase()}
+                      </div>
+                      <div style={{ padding: "1% 0%", color: "gray" }}>
+                        Origin:{i.entries[0].etymologies}
                       </div>
                       <div style={{ padding: "1% 0%" }}>
                         {i.entries[0].senses.map((j) => {
@@ -123,15 +133,17 @@ export const DefineWord = () => {
                           // }
                           return (
                             <div key={j.id}>
-                              <div style={{ padding: "1% 0%" }}>
+                              <div
+                                style={{ padding: "1% 0%", fontWeight: "600" }}
+                              >
                                 {j.definitions[0]}
                               </div>
                               {j.examples && (
-                                <div style={{ padding: "1% 0%" }}>
-                                  {j.examples[0].text}
-                                </div>
+                                <li style={{ padding: "1% 0%" }}>
+                                  Example :- {j.examples[0].text}
+                                </li>
                               )}
-                              {/* <div>{j.examples[0]}</div> */}
+                              
                               {j.subsenses &&
                                 j.subsenses.map((k) => {
                                   return (
@@ -147,6 +159,7 @@ export const DefineWord = () => {
                                     </div>
                                   );
                                 })}
+                              <hr />
                             </div>
                           );
                         })}
