@@ -1,8 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { AddWord } from "./AddWord";
 import data from "../../db.json";
+import { GetWordList } from "../../Redux/Action/action";
+import { loadData } from "../../utils/localStorage";
 
 const Container = styled.div`
   // margin-top: 2%;
@@ -44,19 +46,25 @@ const Div = styled.div`
   background: #efefef;
 `;
 const Card = styled.div`
-  border: 2px solid black;
+  // border: 2px solid black;
   margin-top: 1%;
-  width: 50%;
-  height: 10vh;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  text-align: left;
+  height: auto;
+  // margin-left: auto;
+  // margin-right: auto;
 `;
 export const Home = () => {
+  const dispatch = useDispatch();
   const searchItem = useSelector((state) => state.searchword);
   const addword = useSelector((state) => state.addword);
-  const name = data.name;
-  console.log("108", name);
-  console.log(addword);
+  useEffect(() => {
+    dispatch(GetWordList());
+  }, []);
+
+  let data = loadData("wordList");
+  console.log("65", data);
+  // console.log(addword);
   return (
     <Container>
       <Header>
@@ -64,18 +72,62 @@ export const Home = () => {
       </Header>
       <PopUpModal>{addword && <AddWord />}</PopUpModal>
       <Div>
-        {name
+        {data
           .filter((d) => {
             if (searchItem === "") {
               return d;
-            } else if (
-              d.first_name.toLowerCase().includes(searchItem.toLowerCase())
-            ) {
+            } else if (d.id.toLowerCase().includes(searchItem.toLowerCase())) {
               return d;
             }
           })
           .map((d) => {
-            return <Card key={d.id}>{d.first_name}</Card>;
+            return (
+              <Card key={d.id}>
+                <br />
+                <div style={{ fontWeight: "1000", fontSize: "larger" }}>
+                  {d.id.toUpperCase()}
+                </div>
+                <div>
+                  {d.results[0].lexicalEntries.map((i) => {
+                    return (
+                      <div key={i.id}>
+                        <div>
+                          ({i.lexicalCategory.text}) {i.entries[0].etymologies}
+                        </div>
+                        <div>
+                          {i.entries[0].senses.map((j) => {
+                            // if (j.examples!== undefined) {
+                            //   console.log("98", j.examples[0].text);
+                            // }
+                            return (
+                              <div key={j.id}>
+                                <div>{j.definitions[0]}</div>
+                                {j.examples && <div>{j.examples[0].text}</div>}
+                                {/* <div>{j.examples[0]}</div> */}
+                                {j.subsenses &&
+                                  j.subsenses.map((k) => {
+                                    return (
+                                      <div>
+                                        <div>{k.definitions[0]}</div>
+                                        {k.examples && (
+                                          <div>{k.examples[0].text}</div>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <br />
+                <br />
+                <hr />
+              </Card>
+            );
           })}
       </Div>
     </Container>

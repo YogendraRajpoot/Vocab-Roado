@@ -61,66 +61,18 @@ const ButtonWrapper = styled.div`
 
 export const AddWord = () => {
   const [newWord, setNewWord] = useState("");
-  let key = "98679027a5e0ba9b046410e0ef8f93a8";
-  let id = "a3963750";
-  // let header = ;
-  let endpoint = "entries";
-  let language_code = "en-gb";
-  // let newWord = "example";
   const dispatch = useDispatch();
-
   //   const addword = useSelector((state) => state.addword);
   function onClick() {
     dispatch(addButton(false));
   }
   function handleChange(event) {
     setNewWord(event.target.value);
-    // let newword = setNewWord(event.target.value);
-    // axios({
-    //   method: "get",
-    //   url: `https://od-api.oxforddictionaries.com/api/v2/${endpoint}/${language_code}/${newword}`,
-    //   mode: "no-cors",
-    //   headers: { app_key: key, app_id: id },
-    // }).then(function (res) {
-    //   console.log(res.data);
-    // });
-    // .then(function (response) {
-    //   response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
-    // });
   }
   function handleSubmit(event) {
     event.preventDefault();
-    // GET Request.
-    console.log("93", newWord, id, key);
-    dispatch(NewWord(newWord));
-    // fetch(
-    //   `https://od-api.oxforddictionaries.com/api/v2/${endpoint}/${language_code}/${newWord}`,
-    //   {
-    //     method: "get",
-    //     // mode: "no-cors",
-    //     headers: {
-    //       // "Content-type": "application/json",
-    //       app_id: id,
-    //       app_key: key,
-    //     },
-    //   }
-    // )
-    //   // Handle success
-    //   .then((response) => response.json()) // convert to json
-    //   .then((res) => console.log(res)) //print data to console
-    //   .catch((err) => console.log("Request Failed", err)); // Catch errors
-
-    // ****************************************************************************************************
-
-    // axios({
-    // method: "get",
-    //   url: `https://od-api.oxforddictionaries.com/api/v2/${endpoint}/${language_code}/${newWord}`,
-    // mode: "no-cors",
-    //   mode: "cors",
-    //   headers: {  "app_key": key, "app_id": id },
-    // }).then(function (res) {
-    //   console.log(res.data);
-    // });
+    dispatch(NewWord(newWord)); // dispatch to trigger fetch data
+    dispatch(addButton(false));
   }
   return (
     <Wrapper>

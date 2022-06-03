@@ -1,3 +1,5 @@
+import { saveData } from "../../utils/localStorage";
+
 // action type
 export const ADD_Button = "ADD_Button";
 export const SEARCH_WORD = "SEARCH_WORD";
@@ -19,36 +21,32 @@ export const searchWord = (payload) => {
   };
 };
 export const NewWord = (payload) => (dispatch) => {
-  let key = "98679027a5e0ba9b046410e0ef8f93a8";
-  let id = "a3963750";
-  // let header = ;
-  let endpoint = "entries";
-  let language_code = "en-gb";
-  fetch(
-    `https://od-api.oxforddictionaries.com/api/v2/${endpoint}/${language_code}/${payload}`,
-    {
-      method: "get",
-      // mode: "no-cors",
-      headers: {
-        "Content-type": "application/json",
-        "app_id": id,
-        "app_key": key,
-      },
-    }
-  )
-    // Handle success
-    .then((response) => response.json()) // convert to json
-    .then((res) => console.log("43", res)) //print data to console
-    .catch((err) => console.log("Request Failed", err)); // Catch errors
+  fetch(`http://localhost:9001/${payload}`, { method: "GET", mode: "cors" })
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data.id,data.results);
+      dispatch(WordList(data));
+    });
 };
-
-// `https://od-api.oxforddictionaries.com/api/v2/${endpoint}/${language_code}/${payload}`,
-//     {
-//       method: "get",
-//       // mode: "no-cors",
-//       headers: {
-//         // "Content-type": "application/json",
-//         app_id: id,
-//         app_key: key,
-//       },
-//     }
+export const WordList = (payload) => (dispatch) => {
+  fetch(`http://localhost:9001/vocab`, {
+    method: "post",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      // console.log("30", res);
+      dispatch(GetWordList());      
+    })
+    .catch((err) => console.log(err));
+};
+export const GetWordList = (payload) => (dispatch) => {
+  fetch(`http://localhost:9001/vocab`)
+    .then((res) => res.json())
+    .then((res) => {
+      saveData("wordList", res)
+      // console.log("17", res);      
+    })
+    .catch((err) => console.log(err));
+};

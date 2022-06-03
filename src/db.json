@@ -1,404 +1,587 @@
-{
-    "name": [
-        {
-            "id": 1,
-            "first_name": "Erick"
-        },
-        {
-            "id": 2,
-            "first_name": "Waverly"
-        },
-        {
-            "id": 3,
-            "first_name": "Baron"
-        },
-        {
-            "id": 4,
-            "first_name": "Zackariah"
-        },
-        {
-            "id": 5,
-            "first_name": "Stephanie"
-        },
-        {
-            "id": 6,
-            "first_name": "Esmaria"
-        },
-        {
-            "id": 7,
-            "first_name": "Evonne"
-        },
-        {
-            "id": 8,
-            "first_name": "Gene"
-        },
-        {
-            "id": 9,
-            "first_name": "Trenna"
-        },
-        {
-            "id": 10,
-            "first_name": "Gabie"
-        },
-        {
-            "id": 11,
-            "first_name": "Sebastien"
-        },
-        {
-            "id": 12,
-            "first_name": "Anne-marie"
-        },
-        {
-            "id": 13,
-            "first_name": "Bruce"
-        },
-        {
-            "id": 14,
-            "first_name": "Mel"
-        },
-        {
-            "id": 15,
-            "first_name": "Barde"
-        },
-        {
-            "id": 16,
-            "first_name": "Nike"
-        },
-        {
-            "id": 17,
-            "first_name": "Alfons"
-        },
-        {
-            "id": 18,
-            "first_name": "Emanuel"
-        },
-        {
-            "id": 19,
-            "first_name": "Wilow"
-        },
-        {
-            "id": 20,
-            "first_name": "Iris"
-        },
-        {
-            "id": 21,
-            "first_name": "Stormy"
-        },
-        {
-            "id": 22,
-            "first_name": "Selia"
-        },
-        {
-            "id": 23,
-            "first_name": "Kareem"
-        },
-        {
-            "id": 24,
-            "first_name": "Denys"
-        },
-        {
-            "id": 25,
-            "first_name": "Mikel"
-        },
-        {
-            "id": 26,
-            "first_name": "Tuck"
-        },
-        {
-            "id": 27,
-            "first_name": "Ronalda"
-        },
-        {
-            "id": 28,
-            "first_name": "Britt"
-        },
-        {
-            "id": 29,
-            "first_name": "Maximilian"
-        },
-        {
-            "id": 30,
-            "first_name": "Olva"
-        },
-        {
-            "id": 31,
-            "first_name": "Pattin"
-        },
-        {
-            "id": 32,
-            "first_name": "Ninetta"
-        },
-        {
-            "id": 33,
-            "first_name": "Franny"
-        },
-        {
-            "id": 34,
-            "first_name": "Toni"
-        },
-        {
-            "id": 35,
-            "first_name": "Michaeline"
-        },
-        {
-            "id": 36,
-            "first_name": "Kimble"
-        },
-        {
-            "id": 37,
-            "first_name": "Monique"
-        },
-        {
-            "id": 38,
-            "first_name": "Ulrike"
-        },
-        {
-            "id": 39,
-            "first_name": "Devy"
-        },
-        {
-            "id": 40,
-            "first_name": "Bonita"
-        },
-        {
-            "id": 41,
-            "first_name": "Olwen"
-        },
-        {
-            "id": 42,
-            "first_name": "Carine"
-        },
-        {
-            "id": 43,
-            "first_name": "Leonidas"
-        },
-        {
-            "id": 44,
-            "first_name": "Gonzalo"
-        },
-        {
-            "id": 45,
-            "first_name": "Issie"
-        },
-        {
-            "id": 46,
-            "first_name": "Willetta"
-        },
-        {
-            "id": 47,
-            "first_name": "Sig"
-        },
-        {
-            "id": 48,
-            "first_name": "Haley"
-        },
-        {
-            "id": 49,
-            "first_name": "Ignace"
-        },
-        {
-            "id": 50,
-            "first_name": "Ethel"
-        },
-        {
-            "id": 51,
-            "first_name": "Denny"
-        },
-        {
-            "id": 52,
-            "first_name": "Matthiew"
-        },
-        {
-            "id": 53,
-            "first_name": "Kingsly"
-        },
-        {
-            "id": 54,
-            "first_name": "Dyane"
-        },
-        {
-            "id": 55,
-            "first_name": "Rozina"
-        },
-        {
-            "id": 56,
-            "first_name": "Nadiya"
-        },
-        {
-            "id": 57,
-            "first_name": "Penn"
-        },
-        {
-            "id": 58,
-            "first_name": "Tabbie"
-        },
-        {
-            "id": 59,
-            "first_name": "Clim"
-        },
-        {
-            "id": 60,
-            "first_name": "Glen"
-        },
-        {
-            "id": 61,
-            "first_name": "Bette-ann"
-        },
-        {
-            "id": 62,
-            "first_name": "Warren"
-        },
-        {
-            "id": 63,
-            "first_name": "Inger"
-        },
-        {
-            "id": 64,
-            "first_name": "Amber"
-        },
-        {
-            "id": 65,
-            "first_name": "Tad"
-        },
-        {
-            "id": 66,
-            "first_name": "Sheila"
-        },
-        {
-            "id": 67,
-            "first_name": "Xena"
-        },
-        {
-            "id": 68,
-            "first_name": "Hewitt"
-        },
-        {
-            "id": 69,
-            "first_name": "Kev"
-        },
-        {
-            "id": 70,
-            "first_name": "Quinn"
-        },
-        {
-            "id": 71,
-            "first_name": "Ernestine"
-        },
-        {
-            "id": 72,
-            "first_name": "Arni"
-        },
-        {
-            "id": 73,
-            "first_name": "Roze"
-        },
-        {
-            "id": 74,
-            "first_name": "Jeffy"
-        },
-        {
-            "id": 75,
-            "first_name": "Dionisio"
-        },
-        {
-            "id": 76,
-            "first_name": "Cad"
-        },
-        {
-            "id": 77,
-            "first_name": "Justen"
-        },
-        {
-            "id": 78,
-            "first_name": "Victoir"
-        },
-        {
-            "id": 79,
-            "first_name": "Stanislaus"
-        },
-        {
-            "id": 80,
-            "first_name": "Jemmy"
-        },
-        {
-            "id": 81,
-            "first_name": "Germana"
-        },
-        {
-            "id": 82,
-            "first_name": "Ban"
-        },
-        {
-            "id": 83,
-            "first_name": "Misty"
-        },
-        {
-            "id": 84,
-            "first_name": "Henka"
-        },
-        {
-            "id": 85,
-            "first_name": "Debra"
-        },
-        {
-            "id": 86,
-            "first_name": "Saw"
-        },
-        {
-            "id": 87,
-            "first_name": "Verne"
-        },
-        {
-            "id": 88,
-            "first_name": "Britteny"
-        },
-        {
-            "id": 89,
-            "first_name": "Thornie"
-        },
-        {
-            "id": 90,
-            "first_name": "Candice"
-        },
-        {
-            "id": 91,
-            "first_name": "Keri"
-        },
-        {
-            "id": 92,
-            "first_name": "Clari"
-        },
-        {
-            "id": 93,
-            "first_name": "Bevin"
-        },
-        {
-            "id": 94,
-            "first_name": "Kayne"
-        },
-        {
-            "id": 95,
-            "first_name": "Tamarra"
-        },
-        {
-            "id": 96,
-            "first_name": "Jeffie"
-        },
-        {
-            "id": 97,
-            "first_name": "Truman"
-        },
-        {
-            "id": 98,
-            "first_name": "Janella"
-        },
-        {
-            "id": 99,
-            "first_name": "Gavin"
-        },
-        {
-            "id": 100,
-            "first_name": "Moise"
-        }
-    ]
-}
+[
+    {
+        "_id": "629931869d8693b1b1ae37bc",
+        "id": "resource",
+        "results": [
+            {
+                "id": "resource",
+                "language": "en-gb",
+                "lexicalEntries": [
+                    {
+                        "entries": [
+                            {
+                                "etymologies": [
+                                    "early 17th century: from obsolete French ressourse, feminine past participle (used as a noun) of Old French dialect resourdre ‘rise again, recover’ (based on Latin surgere ‘to rise’)"
+                                ],
+                                "pronunciations": [
+                                    {
+                                        "audioFile": "https://audio.oxforddictionaries.com/en/mp3/resource_gb_3.mp3",
+                                        "dialects": [
+                                            "British English"
+                                        ],
+                                        "phoneticNotation": "IPA",
+                                        "phoneticSpelling": "rɪˈzɔːs"
+                                    }
+                                ],
+                                "senses": [
+                                    {
+                                        "definitions": [
+                                            "a stock or supply of money, materials, staff, and other assets that can be drawn on by a person or organization in order to function effectively"
+                                        ],
+                                        "domainClasses": [
+                                            {
+                                                "id": "commerce",
+                                                "text": "Commerce"
+                                            }
+                                        ],
+                                        "examples": [
+                                            {
+                                                "text": "local authorities complained that they lacked resources"
+                                            }
+                                        ],
+                                        "id": "m_en_gbus0865550.009",
+                                        "notes": [
+                                            {
+                                                "text": "usually \"resources\"",
+                                                "type": "wordFormNote"
+                                            }
+                                        ],
+                                        "semanticClasses": [
+                                            {
+                                                "id": "stock",
+                                                "text": "Stock"
+                                            }
+                                        ],
+                                        "shortDefinitions": [
+                                            "stock or supply of money, materials, staff, and other assets"
+                                        ],
+                                        "subsenses": [
+                                            {
+                                                "definitions": [
+                                                    "a country's collective means of supporting itself or becoming wealthier, as represented by its reserves of minerals, land, and other natural assets"
+                                                ],
+                                                "examples": [
+                                                    {
+                                                        "text": "Japan's exploitation of commercially important marine resources"
+                                                    }
+                                                ],
+                                                "id": "m_en_gbus0865550.014",
+                                                "notes": [
+                                                    {
+                                                        "text": "\"resources\"",
+                                                        "type": "wordFormNote"
+                                                    }
+                                                ],
+                                                "semanticClasses": [
+                                                    {
+                                                        "id": "asset",
+                                                        "text": "Asset"
+                                                    }
+                                                ],
+                                                "shortDefinitions": [
+                                                    "country's collective means of supporting itself or becoming wealthier, as represented by its reserves of minerals"
+                                                ]
+                                            },
+                                            {
+                                                "definitions": [
+                                                    "a source of help or information"
+                                                ],
+                                                "examples": [
+                                                    {
+                                                        "text": "census records are an invaluable resource for the historian"
+                                                    },
+                                                    {
+                                                        "text": "the database could be used as a reference and teaching resource"
+                                                    }
+                                                ],
+                                                "id": "m_en_gbus0865550.017",
+                                                "semanticClasses": [
+                                                    {
+                                                        "id": "help",
+                                                        "text": "Help"
+                                                    }
+                                                ],
+                                                "shortDefinitions": [
+                                                    "source of help or information"
+                                                ],
+                                                "synonyms": [
+                                                    {
+                                                        "language": "en",
+                                                        "text": "facility"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "amenity"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "aid"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "help"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "service"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "support"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "solution"
+                                                    }
+                                                ],
+                                                "thesaurusLinks": [
+                                                    {
+                                                        "entry_id": "resource",
+                                                        "sense_id": "t_en_gb0012518.002"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "definitions": [
+                                                    "available assets."
+                                                ],
+                                                "domainClasses": [
+                                                    {
+                                                        "id": "commerce",
+                                                        "text": "Commerce"
+                                                    }
+                                                ],
+                                                "id": "m_en_gbus0865550.018",
+                                                "notes": [
+                                                    {
+                                                        "text": "\"resources\"",
+                                                        "type": "wordFormNote"
+                                                    }
+                                                ],
+                                                "regions": [
+                                                    {
+                                                        "id": "north_american",
+                                                        "text": "North_American"
+                                                    }
+                                                ],
+                                                "semanticClasses": [
+                                                    {
+                                                        "id": "asset",
+                                                        "text": "Asset"
+                                                    }
+                                                ],
+                                                "shortDefinitions": [
+                                                    "available assets"
+                                                ]
+                                            }
+                                        ],
+                                        "synonyms": [
+                                            {
+                                                "language": "en",
+                                                "text": "assets"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "funds"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "wealth"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "money"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "riches"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "capital"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "deep pockets"
+                                            }
+                                        ],
+                                        "thesaurusLinks": [
+                                            {
+                                                "entry_id": "resource",
+                                                "sense_id": "t_en_gb0012518.001"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "definitions": [
+                                            "an action or strategy which may be adopted in adverse circumstances"
+                                        ],
+                                        "examples": [
+                                            {
+                                                "text": "sometimes anger is the only resource left in a situation like this"
+                                            }
+                                        ],
+                                        "id": "m_en_gbus0865550.020",
+                                        "semanticClasses": [
+                                            {
+                                                "id": "course_of_action",
+                                                "text": "Course_Of_Action"
+                                            }
+                                        ],
+                                        "shortDefinitions": [
+                                            "action or strategy which may be adopted in adverse circumstances"
+                                        ],
+                                        "subsenses": [
+                                            {
+                                                "definitions": [
+                                                    "personal attributes and capabilities regarded as able to help or sustain one in adverse circumstances"
+                                                ],
+                                                "examples": [
+                                                    {
+                                                        "text": "we had been left very much to our own resources"
+                                                    }
+                                                ],
+                                                "id": "m_en_gbus0865550.021",
+                                                "notes": [
+                                                    {
+                                                        "text": "\"resources\"",
+                                                        "type": "wordFormNote"
+                                                    }
+                                                ],
+                                                "semanticClasses": [
+                                                    {
+                                                        "id": "personal_attribute",
+                                                        "text": "Personal_Attribute"
+                                                    }
+                                                ],
+                                                "shortDefinitions": [
+                                                    "personal attributes and capabilities regarded as able to help or sustain one in adverse circumstances"
+                                                ]
+                                            },
+                                            {
+                                                "definitions": [
+                                                    "the ability to find clever ways to overcome difficulties; resourcefulness"
+                                                ],
+                                                "examples": [
+                                                    {
+                                                        "text": "a man of resource"
+                                                    }
+                                                ],
+                                                "id": "m_en_gbus0865550.022",
+                                                "notes": [
+                                                    {
+                                                        "text": "mass noun",
+                                                        "type": "grammaticalNote"
+                                                    }
+                                                ],
+                                                "registers": [
+                                                    {
+                                                        "id": "dated",
+                                                        "text": "Dated"
+                                                    }
+                                                ],
+                                                "semanticClasses": [
+                                                    {
+                                                        "id": "characteristic",
+                                                        "text": "Characteristic"
+                                                    }
+                                                ],
+                                                "shortDefinitions": [
+                                                    "ability to find clever ways to overcome difficulties"
+                                                ],
+                                                "synonyms": [
+                                                    {
+                                                        "language": "en",
+                                                        "text": "initiative"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "resourcefulness"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "enterprise"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "imagination"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "imaginativeness"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "ingenuity"
+                                                    },
+                                                    {
+                                                        "language": "en",
+                                                        "text": "inventiveness"
+                                                    }
+                                                ],
+                                                "thesaurusLinks": [
+                                                    {
+                                                        "entry_id": "resource",
+                                                        "sense_id": "t_en_gb0012518.004"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "constructions": [
+                                                    {
+                                                        "text": "without resource"
+                                                    }
+                                                ],
+                                                "definitions": [
+                                                    "the possibility of aid or assistance"
+                                                ],
+                                                "examples": [
+                                                    {
+                                                        "text": "the flower of the French army was lost without resource"
+                                                    }
+                                                ],
+                                                "id": "m_en_gbus0865550.026",
+                                                "notes": [
+                                                    {
+                                                        "text": "mass noun",
+                                                        "type": "grammaticalNote"
+                                                    }
+                                                ],
+                                                "registers": [
+                                                    {
+                                                        "id": "archaic",
+                                                        "text": "Archaic"
+                                                    }
+                                                ],
+                                                "semanticClasses": [
+                                                    {
+                                                        "id": "help",
+                                                        "text": "Help"
+                                                    }
+                                                ],
+                                                "shortDefinitions": [
+                                                    "possibility of aid or assistance"
+                                                ]
+                                            }
+                                        ],
+                                        "synonyms": [
+                                            {
+                                                "language": "en",
+                                                "text": "expedient"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "resort"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "means"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "measure"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "method"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "course"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "way"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "scheme"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "plan"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "plot"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "stratagem"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "manoeuvre"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "machination"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "agency"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "trick"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "ruse"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "artifice"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "device"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "tool"
+                                            }
+                                        ],
+                                        "thesaurusLinks": [
+                                            {
+                                                "entry_id": "resource",
+                                                "sense_id": "t_en_gb0012518.003"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "definitions": [
+                                            "a leisure occupation."
+                                        ],
+                                        "id": "m_en_gbus0865550.028",
+                                        "registers": [
+                                            {
+                                                "id": "dated",
+                                                "text": "Dated"
+                                            }
+                                        ],
+                                        "semanticClasses": [
+                                            {
+                                                "id": "pastime",
+                                                "text": "Pastime"
+                                            }
+                                        ],
+                                        "shortDefinitions": [
+                                            "leisure occupation"
+                                        ],
+                                        "synonyms": [
+                                            {
+                                                "language": "en",
+                                                "text": "pastime"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "activity"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "leisure activity"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "hobby"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "pursuit"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "interest"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "entertainment"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "recreation"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "diversion"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "amusement"
+                                            },
+                                            {
+                                                "language": "en",
+                                                "text": "divertissement"
+                                            }
+                                        ],
+                                        "thesaurusLinks": [
+                                            {
+                                                "entry_id": "occupation",
+                                                "sense_id": "t_en_gb0010226.002"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "language": "en-gb",
+                        "lexicalCategory": {
+                            "id": "noun",
+                            "text": "Noun"
+                        },
+                        "text": "resource"
+                    },
+                    {
+                        "entries": [
+                            {
+                                "grammaticalFeatures": [
+                                    {
+                                        "id": "transitive",
+                                        "text": "Transitive",
+                                        "type": "Subcategorization"
+                                    }
+                                ],
+                                "pronunciations": [
+                                    {
+                                        "audioFile": "https://audio.oxforddictionaries.com/en/mp3/resource_gb_3.mp3",
+                                        "dialects": [
+                                            "British English"
+                                        ],
+                                        "phoneticNotation": "IPA",
+                                        "phoneticSpelling": "rɪˈzɔːs"
+                                    }
+                                ],
+                                "senses": [
+                                    {
+                                        "definitions": [
+                                            "provide with resources"
+                                        ],
+                                        "examples": [
+                                            {
+                                                "text": "a strategy which ensures that primary healthcare workers are adequately resourced"
+                                            }
+                                        ],
+                                        "id": "m_en_gbus0865550.030",
+                                        "shortDefinitions": [
+                                            "provide with resources"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "language": "en-gb",
+                        "lexicalCategory": {
+                            "id": "verb",
+                            "text": "Verb"
+                        },
+                        "text": "resource"
+                    }
+                ],
+                "type": "headword",
+                "word": "resource"
+            }
+        ],
+        "__v": 0
+    }
+]
