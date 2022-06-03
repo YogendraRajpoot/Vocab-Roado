@@ -107,12 +107,9 @@ const Button = styled.button`
 
 export const Navbar = () => {
   const dispatch = useDispatch();
-  const [button, setButton] = useState(true);
   const [search, setSearch] = useState("");
   function onClick() {
-    setButton(true);
-    dispatch(addButton(button));
-    console.log(button);
+    dispatch(addButton(true));
   }
   function onChange(event) {
     setSearch(event.target.value);

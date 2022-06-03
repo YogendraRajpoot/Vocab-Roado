@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { addButton, NewWord } from "../../Redux/Action/action";
-const axios = require("axios").default;
-var cors = require("cors");
 
 const PopUpModal = styled.div`
   // border: 2px solid black;

@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { AddWord } from "./AddWord";
-import data from "../../db.json";
-import { GetWordList } from "../../Redux/Action/action";
+import { CarD, cardClicked, GetWordList } from "../../Redux/Action/action";
 import { loadData } from "../../utils/localStorage";
+import { DefineWord } from "./DefineWord";
 
 const Container = styled.div`
   // margin-top: 2%;
@@ -46,6 +46,7 @@ const Div = styled.div`
   background: #efefef;
 `;
 const Card = styled.div`
+  cursor: pointer;
   // border: 2px solid black;
   margin-top: 1%;
   width: 100%;
@@ -58,19 +59,25 @@ export const Home = () => {
   const dispatch = useDispatch();
   const searchItem = useSelector((state) => state.searchword);
   const addword = useSelector((state) => state.addword);
+  const cardclicked = useSelector((state) => state.cardclicked);
   useEffect(() => {
     dispatch(GetWordList());
   }, []);
 
+  // function handleClickCard() {
+  //   // console.log(d);
+  //   dispatch(cardClicked(true));
+  // }
   let data = loadData("wordList");
   console.log("65", data);
-  // console.log(addword);
+  console.log("73", cardclicked);
   return (
     <Container>
       <Header>
         <h1>List Of Word</h1>
       </Header>
       <PopUpModal>{addword && <AddWord />}</PopUpModal>
+      <PopUpModal>{cardclicked && <DefineWord />}</PopUpModal>
       <Div>
         {data
           .filter((d) => {
@@ -82,7 +89,13 @@ export const Home = () => {
           })
           .map((d) => {
             return (
-              <Card key={d.id}>
+              <Card
+                key={d.id}
+                onClick={() => {
+                  dispatch(cardClicked(true));
+                  dispatch(CarD(d));
+                }}
+              >
                 <br />
                 <div style={{ fontWeight: "1000", fontSize: "larger" }}>
                   {d.id.toUpperCase()}

@@ -3,6 +3,8 @@ import { saveData } from "../../utils/localStorage";
 // action type
 export const ADD_Button = "ADD_Button";
 export const SEARCH_WORD = "SEARCH_WORD";
+export const CARD_CLICKED = "CARD_CLICKED";
+export const CARD = "CARD";
 
 // action creator
 // function which create action object
@@ -10,6 +12,18 @@ export const SEARCH_WORD = "SEARCH_WORD";
 export const addButton = (payload) => {
   return {
     type: ADD_Button,
+    payload,
+  };
+};
+export const CarD = (payload) => {
+  return {
+    type: CARD,
+    payload,
+  };
+};
+export const cardClicked = (payload) => {
+  return {
+    type: CARD_CLICKED,
     payload,
   };
 };
