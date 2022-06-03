@@ -1,9 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { AddWord } from "./AddWord";
-import { CarD, cardClicked, GetWordList } from "../../Redux/Action/action";
-import { loadData } from "../../utils/localStorage";
+import {
+  CarD,
+  cardClicked,
+  GetWordList,
+  wordList,
+} from "../../Redux/Action/action";
+import { loadData, saveData } from "../../utils/localStorage";
 import { DefineWord } from "./DefineWord";
 
 const Container = styled.div`
@@ -61,22 +66,49 @@ const Card = styled.div`
   margin-right: auto;
 `;
 export const Home = () => {
+  const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
   const dispatch = useDispatch();
   const searchItem = useSelector((state) => state.searchword);
   const addword = useSelector((state) => state.addword);
   const cardclicked = useSelector((state) => state.cardclicked);
-  useEffect(() => {
-    dispatch(GetWordList());
-  }, [addword, cardclicked]);
-  const data = useSelector((state) => state.wordlist) && loadData("wordList");
 
-  console.log("65", data);
-  console.log("73", cardclicked);
-  return (
+  useEffect(() => {
+    getdata();
+  }, []);
+  function getdata() {
+    setIsLoading(true);
+    return fetch("https://vocab-roado-backend.herokuapp.com/vocab")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setData(res);
+      })
+      .catch((err) => setIsError(true))
+      .finally(() => setIsLoading(false));
+  }
+
+  return isLoading ? (
+    <div style={{ width: "100%" }}>
+      <img
+        src="https://cdn.dribbble.com/users/436306/screenshots/6026974/foodline.gif"
+        style={{ marginLeft: "15%", width: "70%", height: "40vw" }}
+      />
+      {/* <img
+        style={{ marginLeft:"35%" }}
+        src="	https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
+      />
+      <img src="https://freefrontend.com/assets/img/css-loaders/loading.gif" style={{marginLeft:"35%"}}/> */}
+    </div>
+  ) : isError ? (
+    <div>Something went wrong</div>
+  ) : (
     <Container>
       <Header>
         <h1>List Of Word</h1>
       </Header>
+      <br />
       <PopUpModal>{addword && <AddWord />}</PopUpModal>
       <PopUpModal>{cardclicked && <DefineWord />}</PopUpModal>
       <Div>
@@ -89,6 +121,7 @@ export const Home = () => {
             }
           })
           .map((d) => {
+            console.log("107", d);
             return (
               <Card
                 key={d.id}

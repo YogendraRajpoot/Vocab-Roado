@@ -9,7 +9,7 @@ import { AddWord } from "../Home/AddWord";
 const Nav = styled.nav`
   position: sticky;
   top: 1%;
-  border-radius:50px;
+  border-radius: 50px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -22,6 +22,7 @@ const Nav = styled.nav`
   color: white;
   background: #e74c3c;
   z-index: 100;
+  padding: 0%;
 `;
 const Left = styled.div`
   // border: 2px solid black;
@@ -43,7 +44,7 @@ const Right = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 `;
-const SearchBox = styled.div`
+const SearchBox1 = styled.div`
   cursor: pointer;
   border: 2px solid black;
   color: black;
@@ -51,7 +52,30 @@ const SearchBox = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  border-radius: 8%;
+  border-radius: 15px;
+
+  // margin-right: 4%;
+  // margin-left: auto;
+  &:hover {
+    // width: 15vh;
+    // outline: none;
+    background: #ff7979;
+  }
+  @media only screen and (max-width: 800px) {
+    display: none;
+    border: none;
+    opacity: 0;
+  }
+`;
+const SearchBox2 = styled.div`
+  cursor: pointer;
+  border: 2px solid black;
+  color: black;
+  // width: 20%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: 15px;
 
   // margin-right: 4%;
   // margin-left: auto;
@@ -104,6 +128,11 @@ const Button = styled.button`
     // outline: none;
     background: #ff7979;
   }
+  // @media only screen and (max-width: 800px) {
+  //   display: none;
+  //   border: none;
+  //   opacity: 0;
+  // }
 `;
 
 export const Navbar = () => {
@@ -114,8 +143,8 @@ export const Navbar = () => {
   }
   function onChange(event) {
     setSearch(event.target.value);
-    dispatch(searchWord(search))
-    console.log("119",search);
+    dispatch(searchWord(search));
+    console.log("119", search);
   }
 
   return (
@@ -125,16 +154,16 @@ export const Navbar = () => {
           <h1>VOCAB</h1>
         </Left>
         <Right>
-          <SearchBox>
+          <SearchBox1>
+            <AddIcon />
             <Button onClick={onClick}>
-              <AddIcon />
-              Add Word
+              <p>Add Word</p>
             </Button>
-          </SearchBox>
-          <SearchBox>
+          </SearchBox1>
+          <SearchBox2>
             <SearchIcon />
             <Input placeholder="Search..." onChange={onChange} />
-          </SearchBox>
+          </SearchBox2>
         </Right>
       </Nav>
       {/* <div>{button && <AddWord />}</div>   */}
