@@ -8,7 +8,8 @@ import { AddWord } from "../Home/AddWord";
 // import data from "../../db.json";
 const Nav = styled.nav`
   position: sticky;
-  top: 0px;
+  top: 1%;
+  border-radius:50px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;

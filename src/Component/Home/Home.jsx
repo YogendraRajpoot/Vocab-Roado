@@ -19,6 +19,8 @@ const Container = styled.div`
 const Header = styled.div`
   position: sticky;
   top: 10vh;
+  box-shadow: 0px 10px 29px rgb(0 0 0 / 35%);
+  border-radius: 50px 50px;
   background: #efefef;
   // height: 6vh;
   width: 100%;
@@ -39,6 +41,8 @@ const PopUpModal = styled.div`
 `;
 const Div = styled.div`
   border: 2px solid black;
+  box-shadow: 0px 10px 29px rgba(0, 0, 0, 0.35);
+  border-radius: 50px;
   margin-top: 2%;
   position: relative;
   height: 80vh;
@@ -48,12 +52,13 @@ const Div = styled.div`
 const Card = styled.div`
   cursor: pointer;
   // border: 2px solid black;
-  margin-top: 1%;
-  width: 100%;
+  // margin-top: 1%;
+  padding: 1% 2%;
+  width: 80%;
   text-align: left;
   height: auto;
-  // margin-left: auto;
-  // margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 `;
 export const Home = () => {
   const dispatch = useDispatch();
@@ -62,13 +67,9 @@ export const Home = () => {
   const cardclicked = useSelector((state) => state.cardclicked);
   useEffect(() => {
     dispatch(GetWordList());
-  }, []);
+  }, [addword, cardclicked]);
+  const data = useSelector((state) => state.wordlist) && loadData("wordList");
 
-  // function handleClickCard() {
-  //   // console.log(d);
-  //   dispatch(cardClicked(true));
-  // }
-  let data = loadData("wordList");
   console.log("65", data);
   console.log("73", cardclicked);
   return (
@@ -104,39 +105,14 @@ export const Home = () => {
                   {d.results[0].lexicalEntries.map((i) => {
                     return (
                       <div key={i.id}>
-                        <div>
-                          ({i.lexicalCategory.text}) {i.entries[0].etymologies}
-                        </div>
-                        <div>
-                          {i.entries[0].senses.map((j) => {
-                            // if (j.examples!== undefined) {
-                            //   console.log("98", j.examples[0].text);
-                            // }
-                            return (
-                              <div key={j.id}>
-                                <div>{j.definitions[0]}</div>
-                                {j.examples && <div>{j.examples[0].text}</div>}
-                                {/* <div>{j.examples[0]}</div> */}
-                                {j.subsenses &&
-                                  j.subsenses.map((k) => {
-                                    return (
-                                      <div>
-                                        <div>{k.definitions[0]}</div>
-                                        {k.examples && (
-                                          <div>{k.examples[0].text}</div>
-                                        )}
-                                      </div>
-                                    );
-                                  })}
-                              </div>
-                            );
-                          })}
+                        <div style={{ padding: "1% 0%" }}>
+                          ({i.lexicalCategory.text}){" "}
+                          {i.entries[0].senses[0].definitions[0]}
                         </div>
                       </div>
                     );
                   })}
                 </div>
-                <br />
                 <br />
                 <hr />
               </Card>
@@ -146,3 +122,29 @@ export const Home = () => {
     </Container>
   );
 };
+
+// <div>
+//                           {i.entries[0].senses.map((j) => {
+//                             // if (j.examples!== undefined) {
+//                             //   console.log("98", j.examples[0].text);
+//                             // }
+//                             return (
+//                               <div key={j.id}>
+//                                 <div>{j.definitions[0]}</div>
+//                                 {j.examples && <div>{j.examples[0].text}</div>}
+//                                 {/* <div>{j.examples[0]}</div> */}
+//                                 {j.subsenses &&
+//                                   j.subsenses.map((k) => {
+//                                     return (
+//                                       <div>
+//                                         <div>{k.definitions[0]}</div>
+//                                         {k.examples && (
+//                                           <div>{k.examples[0].text}</div>
+//                                         )}
+//                                       </div>
+//                                     );
+//                                   })}
+//                               </div>
+//                             );
+//                           })}
+//                         </div>

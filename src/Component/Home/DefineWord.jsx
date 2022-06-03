@@ -58,14 +58,13 @@ const ButtonWrapper = styled.div`
 `;
 const Card = styled.div`
   cursor: pointer;
-  // border: 2px solid black;
-  margin-top: 1%;
-  width: 100%;
+  margin-top: 0%;
+  padding: 2% 2%;
+  width: 95%;
+  height: 67vh;
   text-align: left;
-  height: auto;
-
-  // margin-left: auto;
-  // margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const DefineWord = () => {
@@ -101,33 +100,49 @@ export const DefineWord = () => {
         <ButtonWrapper>
           <div>
             <Card key={d.id}>
-              <div style={{ fontWeight: "1000", fontSize: "larger" }}>
+              <div
+                style={{
+                  fontWeight: "1000",
+                  fontSize: "larger",
+                  padding: "1% 0%",
+                }}
+              >
                 {d.id.toUpperCase()}
               </div>
               <div>
                 {d.results[0].lexicalEntries.map((i) => {
                   return (
-                    <div key={i.id}>
-                      <div>
+                    <div key={i.id} style={{ padding: "1% 0%" }}>
+                      <div style={{ padding: "1% 0%" }}>
                         ({i.lexicalCategory.text}) {i.entries[0].etymologies}
                       </div>
-                      <div>
+                      <div style={{ padding: "1% 0%" }}>
                         {i.entries[0].senses.map((j) => {
                           // if (j.examples!== undefined) {
                           //   console.log("98", j.examples[0].text);
                           // }
                           return (
                             <div key={j.id}>
-                              <div>{j.definitions[0]}</div>
-                              {j.examples && <div>{j.examples[0].text}</div>}
+                              <div style={{ padding: "1% 0%" }}>
+                                {j.definitions[0]}
+                              </div>
+                              {j.examples && (
+                                <div style={{ padding: "1% 0%" }}>
+                                  {j.examples[0].text}
+                                </div>
+                              )}
                               {/* <div>{j.examples[0]}</div> */}
                               {j.subsenses &&
                                 j.subsenses.map((k) => {
                                   return (
                                     <div>
-                                      <div>{k.definitions[0]}</div>
+                                      <div style={{ padding: "1% 0%" }}>
+                                        {k.definitions[0]}
+                                      </div>
                                       {k.examples && (
-                                        <div>{k.examples[0].text}</div>
+                                        <div style={{ padding: "1% 0%" }}>
+                                          {k.examples[0].text}
+                                        </div>
                                       )}
                                     </div>
                                   );

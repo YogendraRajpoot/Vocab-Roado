@@ -5,6 +5,7 @@ export const ADD_Button = "ADD_Button";
 export const SEARCH_WORD = "SEARCH_WORD";
 export const CARD_CLICKED = "CARD_CLICKED";
 export const CARD = "CARD";
+export const WORD_LIST = "WORD_LIST";
 
 // action creator
 // function which create action object
@@ -34,8 +35,17 @@ export const searchWord = (payload) => {
     payload,
   };
 };
+export const wordList = (payload) => {
+  return {
+    type: WORD_LIST,
+    payload,
+  };
+};
 export const NewWord = (payload) => (dispatch) => {
-  fetch(`http://localhost:9001/${payload}`, { method: "GET", mode: "cors" })
+  fetch(`https://vocab-roado-backend.herokuapp.com/${payload}`, {
+    method: "GET",
+    mode: "cors",
+  })
     .then((res) => res.json())
     .then((data) => {
       // console.log(data.id,data.results);
@@ -43,7 +53,7 @@ export const NewWord = (payload) => (dispatch) => {
     });
 };
 export const WordList = (payload) => (dispatch) => {
-  fetch(`http://localhost:9001/vocab`, {
+  fetch(`https://vocab-roado-backend.herokuapp.com/vocab`, {
     method: "post",
     body: JSON.stringify(payload),
     headers: { "Content-Type": "application/json" },
@@ -51,16 +61,17 @@ export const WordList = (payload) => (dispatch) => {
     .then((res) => res.json())
     .then((res) => {
       // console.log("30", res);
-      dispatch(GetWordList());      
+      dispatch(GetWordList());
     })
     .catch((err) => console.log(err));
 };
 export const GetWordList = (payload) => (dispatch) => {
-  fetch(`http://localhost:9001/vocab`)
+  fetch(`https://vocab-roado-backend.herokuapp.com/vocab`)
     .then((res) => res.json())
     .then((res) => {
-      saveData("wordList", res)
-      // console.log("17", res);      
+      saveData("wordList", res);
+      dispatch(wordList(res));
+      // console.log("17", res);
     })
     .catch((err) => console.log(err));
 };
