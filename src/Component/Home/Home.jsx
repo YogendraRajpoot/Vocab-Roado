@@ -93,7 +93,7 @@ export const Home = () => {
     <div style={{ width: "100%" }}>
       <img
         src="https://cdn.dribbble.com/users/436306/screenshots/6026974/foodline.gif"
-        style={{ marginLeft: "15%", width: "70%", height: "40vw" }}
+        style={{ marginLeft: "auto",marginRight: "auto", width: "80%", height: "50vw",marginTop: "1%" }}
       />
       {/* <img
         style={{ marginLeft:"35%" }}
