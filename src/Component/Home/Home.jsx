@@ -43,7 +43,11 @@ const Header = styled.div`
     margin-top: -1%;
   }
   h1 {
-    padding: 1%;
+    // padding: 1%;
+    padding: 3vh 2vh;
+    float: left;
+    font-size: large;
+    font-weight: 500;
   }
 `;
 const PopUpModal = styled.div`
@@ -135,7 +139,7 @@ export const Home = () => {
   ) : (
     <Container>
       <Header>
-        <h1>List Of Word</h1>
+        <h1>Words List</h1>
       </Header>
       <br />
       <PopUpModal>{addword && <AddWord />}</PopUpModal>
