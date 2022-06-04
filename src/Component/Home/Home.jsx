@@ -17,9 +17,10 @@ const Container = styled.div`
   // background: lightcoral;
   // background: rgba(200, 200, 200);
   min-height: 91vh;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  // width: 80%;
+  // margin-left: auto;
+  // margin-right: auto;
 `;
 const Header = styled.div`
   position: sticky;
@@ -27,9 +28,20 @@ const Header = styled.div`
   box-shadow: 0px 10px 29px rgb(0 0 0 / 35%);
   border-radius: 50px 50px;
   background: #efefef;
-  // height: 6vh;
-  width: 100%;
+  height: 8vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   border: 2px solid black;
+  @media only screen and (max-width: 768px) {
+    border: none;
+    width: 100%;
+    height: 10vh;
+    border-radius: 10px;
+    top: 0;
+    z-index: 50;
+    margin-top: -1%;
+  }
   h1 {
     padding: 1%;
   }
@@ -48,11 +60,23 @@ const Div = styled.div`
   border: 2px solid black;
   box-shadow: 0px 10px 29px rgba(0, 0, 0, 0.35);
   border-radius: 50px;
-  margin-top: 2%;
+  margin-top: 0%;
   position: relative;
   height: 80vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   overflow: scroll;
   background: #efefef;
+  @media only screen and (max-width: 768px) {
+    border: none;
+    width: 100%;
+    border-radius: 0px;
+    top: 0;
+    min-height: 85vh;
+    z-index: 50;
+    margin-top: -5%;
+  }
 `;
 const Card = styled.div`
   cursor: pointer;
@@ -90,19 +114,24 @@ export const Home = () => {
   }
 
   return isLoading ? (
-    <div style={{ width: "100%" }}>
+    <div style={{ marginTop: "1%", width: "100%", height: "90vh" }}>
       <img
+        // src="https://loading.io/assets/img/p/landing/bar.svg"
         src="https://cdn.dribbble.com/users/436306/screenshots/6026974/foodline.gif"
-        style={{ marginLeft: "auto",marginRight: "auto", width: "80%", height: "50vw",marginTop: "1%" }}
+        style={{
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "80%",
+          height: "50vw",
+          marginTop: "0%",
+          scrollBehavior:"unset"
+        }}
       />
-      {/* <img
-        style={{ marginLeft:"35%" }}
-        src="	https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
-      />
-      <img src="https://freefrontend.com/assets/img/css-loaders/loading.gif" style={{marginLeft:"35%"}}/> */}
     </div>
   ) : isError ? (
-    <div>Something went wrong</div>
+    <div style={{ marginTop: "10%", width: "100%", height: "90vh" }}>
+      Something Went Wrong.. Check Your Internet Connection,,,
+    </div>
   ) : (
     <Container>
       <Header>
@@ -131,7 +160,7 @@ export const Home = () => {
                 }}
               >
                 <br />
-                <div style={{ fontWeight: "1000", fontSize: "larger" }}>
+                <div style={{ fontWeight: "1000", fontSize: "larger", }}>
                   {d.id.toUpperCase()}
                 </div>
                 <div>

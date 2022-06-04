@@ -1,7 +1,9 @@
 import { color } from "@mui/system";
+import { hover } from "@testing-library/user-event/dist/hover";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import CloseIcon from "@mui/icons-material/Close";
 import { addButton, cardClicked, NewWord } from "../../Redux/Action/action";
 
 const PopUpModal = styled.div`
@@ -10,9 +12,9 @@ const PopUpModal = styled.div`
   background: white;
   position: relative;
   margin-top: 20vh;
-  padding: 8%;
+  padding: 93px 50px;
   width: 45%;
-  overflow: scroll;
+  // overflow: scroll;
   border-radius: 13%;
   height: 40vh;
   margin-left: auto;
@@ -22,13 +24,35 @@ const PopUpModal = styled.div`
   // justify-content: center;
   justify-content: space-evenly;
   align-items: center;
-  input {
-    padding: 1% 2%;
-    margin-top: 4%;
-    // width: 19%;
-    // height: 6%;
-    // margin-top: auto;
-    // margin-bottom: auto;
+  // border: 2px solid black;
+  .buttonDiv {
+    position: fixed;
+    top: 22vh;
+    background: white;
+    right: 28%;
+    z-index: 1;
+
+    // width: 47%,
+    // height: 8%,
+  }
+
+  @media only screen and (max-width: 768px) {
+    background: white;
+    position: relative;
+    height: 100%;
+    margin-top: 0vh;
+    padding: 0px;
+    width: 100%;
+    border-radius: 0%;
+    .buttonDiv {
+      position: fixed;
+      top: 2vh;
+      background: white;
+      right: 6%;
+      z-index: 1;
+      // width: 47%,
+      // height: 8%,
+    }
   }
 `;
 const Wrapper = styled.div`
@@ -39,17 +63,29 @@ const Wrapper = styled.div`
   background: rgba(200, 200, 200);
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 60;
 `;
 const ButtonWrapper = styled.div`
-  // border: 2px solid black;
-  margin-top: 10%;
-  width: 100%;
+  margin-top: 2vh;
+  position: fixed;
+  width: 50%;
+  height: 45%;
+  // width: 100%;
+  // height: 100%;
+  // border: 2px solid;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 4%;
+  padding: 0%;
+  @media only screen and (max-width: 768px) {
+    margin-top: 2vh;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+  }
   button {
     padding: 3% 5%;
   }
@@ -60,12 +96,40 @@ const ButtonWrapper = styled.div`
 const Card = styled.div`
   cursor: pointer;
   margin-top: 0%;
-  padding: 2% 2%;
-  width: 95%;
-  height: 67vh;
+  overflow: scroll;
+  /* padding: 2% 2%; */
+  width: 90%;
+  height: 100%;
+  // border: 2px solid;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
+  .header {
+    font-weight: 1000;
+    fontsize: larger;
+    padding: 1% 0%;
+    position: fixed;
+    top: 22vh;
+    border-bottom: 1px solid grey;
+    width: 45%;
+  }
+  @media only screen and (max-width: 768px) {
+    cursor: pointer;
+    margin-top: 11vh;
+    overflow: scroll;
+    width: 90%;
+    height: 86%;
+    border: 0px solid;
+    /* text-align: left; */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 124%;
+
+    .header {
+      top: 6vh;
+      width: 90%;
+    }
+  }
 `;
 
 export const DefineWord = () => {
@@ -79,53 +143,47 @@ export const DefineWord = () => {
   return (
     <Wrapper>
       <PopUpModal>
-        <div
-          style={{
-            position: "fixed",
-            top: "20%",
-            background: "white",
-            width: "47%",
-            height: "8%",
-          }}
-        >
+        <div className="buttonDiv">
           <button
             style={{
-              marginTop: "2%",
-              padding: "1vh 3vh",
+              cursor: "pointer",
+              // marginTop: "2%",
+              // float: "right",
+              padding: "4%",
+              border: "0",
+              background: "white",
+              color: "grey",
             }}
             onClick={onClick}
           >
-            Cancle
+            <CloseIcon />
           </button>
         </div>
         <ButtonWrapper>
-          <div>
+          <div style={{ height: "100%" }}>
             <Card key={d.id}>
-              <div
-                style={{
-                  fontWeight: "1000",
-                  fontSize: "larger",
-                  padding: "1% 0%",
-                }}
-              >
-                {d.id.toUpperCase()}
-              </div>
+              <h2 className="header">{d.id.toUpperCase()}</h2>
               <div>
                 {d.results[0].lexicalEntries.map((i) => {
                   return (
                     <div key={i.id} style={{ padding: "1% 0%" }}>
                       <div
                         style={{
-                          padding: "1% 0%",
+                          // padding: "1% 0%",
+                          // position: "fixed",
                           fontStyle: "italic",
                           color: "gray",
+                          top: "25vh",
+                          left: "45vh",
                         }}
                       >
                         {i.lexicalCategory.text.toLowerCase()}
                       </div>
-                      <div style={{ padding: "1% 0%", color: "gray" }}>
-                        Origin:{i.entries[0].etymologies}
-                      </div>
+                      {i.entries[0].etymologies && (
+                        <div style={{ padding: "1% 0%", color: "gray" }}>
+                          Origin : {i.entries[0].etymologies}
+                        </div>
+                      )}
                       <div style={{ padding: "1% 0%" }}>
                         {i.entries[0].senses.map((j) => {
                           // if (j.examples!== undefined) {
@@ -139,31 +197,57 @@ export const DefineWord = () => {
                                 {j.definitions[0]}
                               </div>
                               {j.examples && (
-                                <li style={{ padding: "1% 0%" }}>
-                                  Example :- {j.examples[0].text}
+                                <li
+                                  style={{
+                                    padding: "1% 0%",
+                                    padding: "1% 0%",
+                                    // border: "2px solid",
+                                    width: "92%",
+                                    marginLeft: "auto",
+                                    fontWeight: "600",
+                                    fontSize: "medium",
+                                  }}
+                                >
+                                  {j.examples[0].text}
                                 </li>
                               )}
-                              
+
                               {j.subsenses &&
                                 j.subsenses.map((k) => {
                                   return (
                                     <div>
-                                      <div style={{ padding: "1% 0%" }}>
+                                      <div
+                                        style={{
+                                          fontWeight: "600",
+                                          padding: "1% 0%",
+                                        }}
+                                      >
                                         {k.definitions[0]}
                                       </div>
                                       {k.examples && (
-                                        <div style={{ padding: "1% 0%" }}>
+                                        <li
+                                          style={{
+                                            padding: "1% 0%",
+                                            padding: "1% 0%",
+                                            // border: "2px solid",
+                                            width: "92%",
+                                            marginLeft: "auto",
+                                            fontWeight: "600",
+                                            fontSize: "medium",
+                                          }}
+                                        >
                                           {k.examples[0].text}
-                                        </div>
+                                        </li>
                                       )}
                                     </div>
                                   );
                                 })}
-                              <hr />
+                              {/* <hr /> */}
                             </div>
                           );
                         })}
                       </div>
+                      <hr />
                     </div>
                   );
                 })}
