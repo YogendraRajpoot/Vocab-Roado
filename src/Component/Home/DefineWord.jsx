@@ -26,13 +26,13 @@ const PopUpModal = styled.div`
   align-items: center;
   // border: 2px solid black;
   .buttonDiv {
-    position: fixed;
-    top: 22vh;
-    background: white;
-    right: 28%;
+    position: static;
     z-index: 1;
-    // width: 47%,
-    // height: 8%,
+    /* width: 5vh; */
+    /* height: 4vh; */
+    /* border: 2px solid; */
+    margin-top: -51vh;
+    margin-left: 52vh;
   }
 
   @media only screen and (max-width: 800px) {
