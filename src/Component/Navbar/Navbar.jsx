@@ -81,8 +81,7 @@ const Left = styled.div`
       color: white;
     }
     &:focus {
-      width: 100vh;
-      outline: none;
+       outline: none;
     }
   }
   @media only screen and (max-width: 800px) {
