@@ -106,7 +106,7 @@ export const Home = () => {
     return fetch("https://vocab-roado-backend.herokuapp.com/vocab")
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setData(res);
       })
       .catch((err) => setIsError(true))
@@ -150,7 +150,7 @@ export const Home = () => {
             }
           })
           .map((d) => {
-            console.log("107", d);
+            // console.log("107", d);
             return (
               <Card
                 key={d.id}
