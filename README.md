@@ -21,11 +21,11 @@
 
 
 ## Want To Run 💻
-- It deploy on heroku
+- It deploy on Netlify
 - Go and check link below
 
 ```bash
-   https://vocab-roado-frontend.herokuapp.com/
+   (https://vocabappyogendrarajpoot.netlify.app/)
 ```
 
 ## Snapshots 📷
@@ -39,7 +39,7 @@
 
 ## Demo 🎥
 
-Deployed Link: [Vocab Web Site Link](https://vocab-roado-frontend.herokuapp.com/)
+Deployed Link: [Vocab Web Site Link](https://vocabappyogendrarajpoot.netlify.app/))
 
 
 ## Author 🤝
