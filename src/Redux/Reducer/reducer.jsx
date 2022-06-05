@@ -2,6 +2,7 @@ import {
   ADD_Button,
   CARD,
   CARD_CLICKED,
+  IS_LOADING,
   SEARCH_WORD,
   WORD_LIST,
 } from "../Action/action";
@@ -11,6 +12,7 @@ const initState = {
   searchword: "",
   card: {},
   wordlist: {},
+  isloading: true,
 };
 export const reducer = (state = initState, action) => {
   switch (action.type) {
@@ -18,6 +20,11 @@ export const reducer = (state = initState, action) => {
       return {
         ...state,
         addword: action.payload,
+      };
+    case IS_LOADING:
+      return {
+        ...state,
+        isloading: action.payload,
       };
     case SEARCH_WORD:
       return {

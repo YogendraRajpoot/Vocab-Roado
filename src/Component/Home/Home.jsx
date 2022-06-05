@@ -6,10 +6,12 @@ import {
   CarD,
   cardClicked,
   GetWordList,
+  IsLoading,
   wordList,
 } from "../../Redux/Action/action";
 import { loadData, saveData } from "../../utils/localStorage";
 import { DefineWord } from "./DefineWord";
+import zIndex from "@mui/material/styles/zIndex";
 
 const Container = styled.div`
   // margin-top: 2%;
@@ -107,6 +109,7 @@ export const Home = () => {
   }, []);
   function getdata() {
     setIsLoading(true);
+    dispatch(IsLoading(true));
     return fetch("https://vocab-roado-backend.herokuapp.com/vocab")
       .then((res) => res.json())
       .then((res) => {
@@ -114,11 +117,16 @@ export const Home = () => {
         setData(res);
       })
       .catch((err) => setIsError(true))
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        setIsLoading(false);
+        dispatch(IsLoading(false));
+      });
   }
 
   return isLoading ? (
-    <div style={{ marginTop: "1%", width: "100%", height: "90vh" }}>
+    <div
+      style={{ marginTop: "1%", width: "100%", height: "90vh", zIndex: "100" }}
+    >
       <img
         // src="https://loading.io/assets/img/p/landing/bar.svg"
         src="https://cdn.dribbble.com/users/436306/screenshots/6026974/foodline.gif"
@@ -128,12 +136,24 @@ export const Home = () => {
           width: "80%",
           height: "50vw",
           marginTop: "0%",
-          scrollBehavior:"unset"
+          scrollBehavior: "unset",
         }}
       />
     </div>
   ) : isError ? (
     <div style={{ marginTop: "10%", width: "100%", height: "90vh" }}>
+      <img
+        // src="https://loading.io/assets/img/p/landing/bar.svg"
+        src="https://cdn.dribbble.com/users/436306/screenshots/6026974/foodline.gif"
+        style={{
+          marginLeft: "30vh",
+          // marginRight: "auto",
+          width: "80%",
+          height: "50vw",
+          marginTop: "0%",
+          scrollBehavior: "unset",
+        }}
+      />
       Something Went Wrong.. Check Your Internet Connection,,,
     </div>
   ) : (
@@ -164,7 +184,7 @@ export const Home = () => {
                 }}
               >
                 <br />
-                <div style={{ fontWeight: "1000", fontSize: "larger", }}>
+                <div style={{ fontWeight: "1000", fontSize: "larger" }}>
                   {d.id.toUpperCase()}
                 </div>
                 <div>

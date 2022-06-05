@@ -6,6 +6,7 @@ export const SEARCH_WORD = "SEARCH_WORD";
 export const CARD_CLICKED = "CARD_CLICKED";
 export const CARD = "CARD";
 export const WORD_LIST = "WORD_LIST";
+export const IS_LOADING="IS_LOADING";
 
 // action creator
 // function which create action object
@@ -13,6 +14,12 @@ export const WORD_LIST = "WORD_LIST";
 export const addButton = (payload) => {
   return {
     type: ADD_Button,
+    payload,
+  };
+};
+export const IsLoading = (payload) => {
+  return {
+    type: IS_LOADING,
     payload,
   };
 };

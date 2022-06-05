@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addButton, searchWord } from "../../Redux/Action/action";
 import CloseIcon from "@mui/icons-material/Close";
 import { AddWord } from "../Home/AddWord";
@@ -81,7 +81,7 @@ const Left = styled.div`
       color: white;
     }
     &:focus {
-       outline: none;
+      outline: none;
     }
   }
   @media only screen and (max-width: 800px) {
@@ -170,7 +170,7 @@ const SearchBox1 = styled.div`
     background: rgba(98, 36, 73, 255);
     border-radius: 50px;
     z-index: 60;
-    right: 10vh;
+    right: 25vh;
   }
   @media only screen and (max-width: 800px) {
     cursor: pointer;
@@ -199,8 +199,9 @@ const SearchBox1 = styled.div`
 
 export const Navbar = () => {
   const dispatch = useDispatch();
+  const isload = useSelector((state) => state.isloading);
   const [search, setSearch] = useState("");
-  const [searchButton, setSearchButton] = useState(false);
+  const [searchButton, setSearchButton] = useState(true);
 
   function onClick() {
     dispatch(addButton(true));
@@ -245,9 +246,12 @@ export const Navbar = () => {
           </>
         )}
       </Nav>
-      <SearchBox1>
-        <AddIcon onClick={onClick} className="addicon" />
-      </SearchBox1>
+      
+      {isload ? <div></div>:(
+        <SearchBox1>
+          <AddIcon onClick={onClick} className="addicon" />
+        </SearchBox1>
+      )}
     </>
   );
 };
